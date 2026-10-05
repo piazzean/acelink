@@ -31,7 +31,7 @@ jobs:
         if: ${{ github.ref == 'refs/heads/master' }}
         with:
           context: .
-          platforms: linux/amd64  # linux/arm64 won't work because there's no acestream bin for this platform
+          platforms: linux/amd64,linux/arm64  # arm64 runs the x86_64 engine through box64
           push: true
           tags: blaiseio/acelink:latest
       -
@@ -40,6 +40,6 @@ jobs:
         if: ${{ github.event.release.tag_name }}
         with:
           context: .
-          platforms: linux/amd64  # linux/arm64 see above
+          platforms: linux/amd64,linux/arm64
           push: true
           tags: blaiseio/acelink:${{ github.event.release.tag_name }}

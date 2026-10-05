@@ -2,7 +2,6 @@ VERSION := $(shell cat VERSION)
 ARCHIVEDIR ?= $(CURDIR)/builds/archives/Ace.Link.$(VERSION).xcarchive
 RELEASEDIR ?= $(CURDIR)/builds/Ace.Link.$(VERSION)
 DOCKER_BUILDKIT ?= 1
-DOCKER_DEFAULT_PLATFORM ?= linux/amd64
 
 docker:
 	# Create docker image

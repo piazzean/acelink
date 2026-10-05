@@ -12,7 +12,7 @@ Play an Ace Stream or Magnet in any media player by pasting the URL in the Ace L
  - Install using HomeBrew: `brew install --cask ace-link`
  - [Download an older version](https://github.com/blaise-io/acelink/releases)
 
-Requires Docker and macOS High Sierra (10.13) or later.
+Requires Docker and macOS Monterey (12.0) or later.
 
 <img src="acelink.png" width="350" alt="Ace Link" />
 
@@ -29,14 +29,14 @@ Ace Link is an unsigned app because Apple does not allow p2p related application
 If you just want to run the AceStream engine, you can do so without Ace Link:
 
 ```sh
-docker run --platform=linux/amd64 --rm -p 6878:6878 blaiseio/acelink
+docker run --rm -p 6878:6878 blaiseio/acelink
 # now open http://<network ip>:6878/ace/getstream?id=<acestream id>
 # or http://<network ip>:6878/ace/getstream?infohash=<magnet uri> in a player
 ```
 
 If you want to use a custom acestream.conf: 
 ```
-docker run --platform=linux/amd64 --rm -p 6878:6878 -v "$(pwd)/acestream.conf:/opt/acestream/acestream.conf" blaiseio/acelink
+docker run --rm -p 6878:6878 -v "$(pwd)/acestream.conf:/opt/acestream/acestream.conf" blaiseio/acelink
 ```
 
 ### View Ace Link logs
