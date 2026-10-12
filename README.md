@@ -1,5 +1,7 @@
-> [!WARNING]
-> Due to time constraints, I will not review issues or pull requests unless core functionality is broken for most users. I am open to transferring ownership of this project to contributors who have selflessly helped improving this project in 2025 or before. You are also welcome to fork the project. If a fork gains traction within the community, I will archive this project and link to the fork.
+> [!NOTE]
+> This is a fork of [blaise-io/acelink](https://github.com/blaise-io/acelink) that adds native Apple Silicon (arm64) support. The Ace Stream engine only ships as an x86_64 binary, so the original app forced Docker to run a `linux/amd64` image, which relies on Rosetta. Future macOS releases will drop Rosetta, so this fork publishes a multi-arch image (`linux/amd64` and `linux/arm64`) in which the engine runs through [box64](https://github.com/ptitSeb/box64) on arm64, and no longer forces `amd64`.
+>
+> Many thanks to [Blaise Kal](https://github.com/blaise-io) for creating and maintaining Ace Link, and to everyone who contributed to it. The original project is released under the MIT license, and this fork keeps that license and the original copyright notice.
 
 # Ace Link
 
@@ -7,12 +9,13 @@ Ace Link is a menu bar app that allows playing Ace Streams on macOS.
 
 Play an Ace Stream or Magnet in any media player by pasting the URL in the Ace Link menu, or open an acestream or magnet link in Ace Link.
 
-## [Download for macOS](https://github.com/blaise-io/acelink/releases/download/2.1.0/Ace.Link.2.1.0.dmg)
+## [Download for macOS (original release, Intel build)](https://github.com/blaise-io/acelink/releases/download/2.1.0/Ace.Link.2.1.0.dmg)
 
- - Install using HomeBrew: `brew install --cask ace-link`
+ - Install the original release using HomeBrew: `brew install --cask ace-link`
  - [Download an older version](https://github.com/blaise-io/acelink/releases)
+ - Fork releases with arm64 support: [piazzean/acelink releases](https://github.com/piazzean/acelink/releases)
 
-Requires Docker and macOS Monterey (12.0) or later.
+Requires Docker and macOS Monterey (12.0) or later. Works natively on Apple Silicon and Intel Macs; on Apple Silicon the engine runs through box64 inside the container, so no Rosetta is needed.
 
 <img src="acelink.png" width="350" alt="Ace Link" />
 
