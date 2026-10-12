@@ -5,7 +5,7 @@ DOCKER_BUILDKIT ?= 1
 
 docker:
 	# Create docker image
-	docker build . --tag blaiseio/acelink:$(VERSION) --progress=plain
+	docker build . --tag ghcr.io/piazzean/acelink:$(VERSION) --progress=plain
 
 build:
 	# Create a build

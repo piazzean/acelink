@@ -24,7 +24,7 @@ public enum AppConstants {
         static let bundleID = "com.docker.docker"
         static let containerName = "acelink--ace-stream-server"
         static let enginePort = 6878
-        static let image = "blaiseio/acelink:\(AppConstants.version)"
+        static let image = "ghcr.io/piazzean/acelink:\(AppConstants.version)"
         static let proxyPort = 6888
     }
 }

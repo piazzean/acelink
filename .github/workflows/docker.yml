@@ -1,4 +1,4 @@
-name: Build and push blaiseio/acelink
+name: Build and push ghcr.io/piazzean/acelink
 
 on:
   push:
@@ -9,6 +9,9 @@ on:
 jobs:
   docker:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     steps:
       -
         name: Checkout
@@ -20,11 +23,12 @@ jobs:
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
       -
-        name: Login to DockerHub
+        name: Login to GitHub Container Registry
         uses: docker/login-action@v1
         with:
-          username: blaiseio
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       -
         name: Build and push
         uses: docker/build-push-action@v2
@@ -33,7 +37,7 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64  # arm64 runs the x86_64 engine through box64
           push: true
-          tags: blaiseio/acelink:latest
+          tags: ghcr.io/piazzean/acelink:latest
       -
         name: Build and push
         uses: docker/build-push-action@v2
@@ -42,4 +46,4 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: blaiseio/acelink:${{ github.event.release.tag_name }}
+          tags: ghcr.io/piazzean/acelink:${{ github.event.release.tag_name }}
