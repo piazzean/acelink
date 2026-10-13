@@ -1,8 +1,6 @@
 name: Build and push ghcr.io/piazzean/acelink
 
 on:
-  push:
-    branches: [master]
   release:
     types: [published]
 
@@ -32,18 +30,10 @@ jobs:
       -
         name: Build and push
         uses: docker/build-push-action@v2
-        if: ${{ github.ref == 'refs/heads/master' }}
         with:
           context: .
           platforms: linux/amd64,linux/arm64  # arm64 runs the x86_64 engine through box64
           push: true
-          tags: ghcr.io/piazzean/acelink:latest
-      -
-        name: Build and push
-        uses: docker/build-push-action@v2
-        if: ${{ github.event.release.tag_name }}
-        with:
-          context: .
-          platforms: linux/amd64,linux/arm64
-          push: true
-          tags: ghcr.io/piazzean/acelink:${{ github.event.release.tag_name }}
+          tags: |
+            ghcr.io/piazzean/acelink:latest
+            ghcr.io/piazzean/acelink:${{ github.event.release.tag_name }}
