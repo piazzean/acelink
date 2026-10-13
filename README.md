@@ -11,10 +11,10 @@ Play an Ace Stream or Magnet in any media player by pasting the URL in the Ace L
 
 ## [Download for macOS](https://github.com/piazzean/acelink/releases/download/2.2.0/Ace.Link.2.2.0.dmg)
 
- - Install the original (Intel-era) release using Homebrew: `brew install --cask ace-link`
- - [Download an older version](https://github.com/piazzean/acelink/releases)
+ - [Download current version](https://github.com/piazzean/acelink/releases)
  - Older releases of the original project: [blaise-io/acelink releases](https://github.com/blaise-io/acelink/releases)
-
+ - Install the original (Intel-era) release using Homebrew: `brew install --cask ace-link`
+ 
 Requires Docker and macOS Monterey (12.0) or later. Works natively on Apple Silicon and Intel Macs; on Apple Silicon the engine runs through box64 inside the container, so no Rosetta is needed.
 
 <img src="acelink.png" width="350" alt="Ace Link" />
