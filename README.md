@@ -9,11 +9,11 @@ Ace Link is a menu bar app that allows playing Ace Streams on macOS.
 
 Play an Ace Stream or Magnet in any media player by pasting the URL in the Ace Link menu, or open an acestream or magnet link in Ace Link.
 
-## [Download for macOS (original release, Intel build)](https://github.com/blaise-io/acelink/releases/download/2.1.0/Ace.Link.2.1.0.dmg)
+## [Download for macOS](https://github.com/piazzean/acelink/releases/download/2.2.0/Ace.Link.2.2.0.dmg)
 
- - Install the original release using HomeBrew: `brew install --cask ace-link`
- - [Download an older version](https://github.com/blaise-io/acelink/releases)
- - Fork releases with arm64 support: [piazzean/acelink releases](https://github.com/piazzean/acelink/releases)
+ - Install the original (Intel-era) release using Homebrew: `brew install --cask ace-link`
+ - [Download an older version](https://github.com/piazzean/acelink/releases)
+ - Older releases of the original project: [blaise-io/acelink releases](https://github.com/blaise-io/acelink/releases)
 
 Requires Docker and macOS Monterey (12.0) or later. Works natively on Apple Silicon and Intel Macs; on Apple Silicon the engine runs through box64 inside the container, so no Rosetta is needed.
 

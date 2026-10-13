@@ -11,9 +11,9 @@ private struct GetReleasesResponse: Decodable {
 }
 
 class UpdateMenu: PartialMenu {
-    private let aceLinkDownloadLatestUrl = "https://github.com/blaise-io/acelink/releases/latest"
+    private let aceLinkDownloadLatestUrl = "https://github.com/piazzean/acelink/releases/latest"
     private let aceLinkLatestApiUrl =
-        "https://api.github.com/repos/blaise-io/acelink/releases/latest"
+        "https://api.github.com/repos/piazzean/acelink/releases/latest"
 
     private let updateItem = NSMenuItem(
         title: "Update",

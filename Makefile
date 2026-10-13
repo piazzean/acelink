@@ -27,4 +27,4 @@ release:
 	hdiutil create -volname "Ace Link $(VERSION)" -srcfolder $(RELEASEDIR) -ov -format UDZO $(RELEASEDIR).dmg
 	rm -rf $(RELEASEDIR)
 	open -a finder $(CURDIR)/builds
-	open https://github.com/blaise-io/acelink/releases/new
+	open https://github.com/piazzean/acelink/releases/new
